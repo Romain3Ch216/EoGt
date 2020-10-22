@@ -5,6 +5,13 @@ import ast
 import pandas as pd
 
 def hyper2rgb(img, bands):
+    """Convert hyperspectral cube to a rgb image.
+    Args:
+        img: HS npy cube
+        bands: tuple of rgb bands
+    Returns:
+        npy rgb array
+    """
     rgb = spectral.get_rgb(img, bands)
     rgb /= np.max(rgb)
     rgb = np.asarray(255 * rgb, dtype='uint8')
