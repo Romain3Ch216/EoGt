@@ -77,4 +77,5 @@ class GtSelection:
 
         cv2.destroyWindow('image')
         np.save('gt.npy',gt)
+        cv2.imwrite('gt.jpg', self.RGB, [cv2.IMWRITE_JPEG_QUALITY, 100])
         return nb_px
